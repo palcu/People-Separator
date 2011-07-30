@@ -1,0 +1,40 @@
+﻿@model PipSep.Models.ApplicationCV
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ApplicationCV</legend>
+
+    <div class="display-label">QuestionWhy</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionWhy)
+    </div>
+
+    <div class="display-label">QuestionWhyYou</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionWhyYou)
+    </div>
+
+    <div class="display-label">QuestionCV</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionCV)
+    </div>
+
+    <div class="display-label">IsAccepted</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAccepted)
+    </div>
+
+    <div class="display-label">WhoConfirmedIt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WhoConfirmedIt)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

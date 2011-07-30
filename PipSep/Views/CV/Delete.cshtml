@@ -1,0 +1,43 @@
+﻿@model PipSep.Models.ApplicationCV
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ApplicationCV</legend>
+
+    <div class="display-label">QuestionWhy</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionWhy)
+    </div>
+
+    <div class="display-label">QuestionWhyYou</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionWhyYou)
+    </div>
+
+    <div class="display-label">QuestionCV</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionCV)
+    </div>
+
+    <div class="display-label">IsAccepted</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsAccepted)
+    </div>
+
+    <div class="display-label">WhoConfirmedIt</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WhoConfirmedIt)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

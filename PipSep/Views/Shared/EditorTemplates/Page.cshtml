@@ -1,0 +1,61 @@
+﻿@model PipSep.Models.Page
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Page</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Content)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Content)
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsMenu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsMenu)
+            @Html.ValidationMessageFor(model => model.IsMenu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsBlog)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsBlog)
+            @Html.ValidationMessageFor(model => model.IsBlog)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsComment)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsComment)
+            @Html.ValidationMessageFor(model => model.IsComment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsSticky)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsSticky)
+            @Html.ValidationMessageFor(model => model.IsSticky)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}

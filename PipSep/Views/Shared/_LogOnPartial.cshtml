@@ -1,0 +1,11 @@
+﻿@if(Request.IsAuthenticated) {
+    <text>Welcome <strong>@User.Identity.Name</strong>!<br />
+    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+}
+else {
+	<ul>
+		<li>[ @Html.ActionLink("Classic Log In", "LogOn", "Account") ]</li>
+		<li><fb:login-button perms="user_about_me,user_activities,user_education_history,user_likes,user_status,user_hometown,user_interests,offline_access" onlogin="window.location = '@Url.Action("LogOn", "Facebook")';">Facebook Connect</fb:login-button></li>
+		<li><a href="@Url.Action("Register", "Account")" class="call-to-action" id="box-apply-button">Apply now!</a></li>
+	</ul>
+}

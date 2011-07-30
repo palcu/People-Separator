@@ -1,0 +1,70 @@
+﻿@model PipSep.Models.ApplicationCV
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create CV</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.NobleCount.min.js")" type="text/javascript"></script>
+
+<script>
+	$(document).ready(function () {
+		$('#QuestionWhy').NobleCount('#count1');
+		$('#QuestionWhyYou').NobleCount('#count2');
+		$('#QuestionCV').NobleCount('#count3');
+	});
+</script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Application CV</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionWhy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QuestionWhy)
+            @Html.ValidationMessageFor(model => model.QuestionWhy)
+			<br>
+			<span id='count1'></span> characters remaining remaining
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionWhyYou)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QuestionWhyYou)
+            @Html.ValidationMessageFor(model => model.QuestionWhyYou)
+			<br>
+			<span id='count2'></span> characters remaining remaining
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionCV)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QuestionCV)
+            @Html.ValidationMessageFor(model => model.QuestionCV)
+			<br>
+			<span id='count3'></span> characters remaining remaining
+        </div>
+
+		<div class="editor-label">
+            @Html.LabelFor(model => model.Gender)
+        </div>
+		<div class="editor-field">
+			<select name="gender">
+				<option>Male</option>
+				<option>Female</option>
+			</select>
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}

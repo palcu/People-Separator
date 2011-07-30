@@ -1,0 +1,97 @@
+﻿@model PipSep.Models.ApplicationCV
+
+@{
+    ViewBag.Title = "Editor";
+}
+
+<h2>Editor</h2>
+
+@if (ViewBag.Message != null){
+	<p><span class="input-validation-ok">@ViewBag.Message</span></p>
+	
+	<p id ="attention-message">
+	@if (ViewBag.Next != null){ 
+		@Html.ActionLink("Next unverified CV", "Editor", new { id = ViewBag.Next });
+	} else {
+				@:Yeey... you have finished the CVs.	
+	}
+	</p>
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Model.UserName</legend>
+
+        @Html.HiddenFor(model => model.Id)
+		@Html.HiddenFor(model => model.UserName)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionWhy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QuestionWhy)
+            @Html.ValidationMessageFor(model => model.QuestionWhy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionWhyYou)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QuestionWhyYou)
+            @Html.ValidationMessageFor(model => model.QuestionWhyYou)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionCV)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.QuestionCV)
+            @Html.ValidationMessageFor(model => model.QuestionCV)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsAccepted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsAccepted)
+            @Html.ValidationMessageFor(model => model.IsAccepted)
+        </div>
+
+		<div class="editor-label">
+            @Html.LabelFor(model => model.HasBeenFlagged)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HasBeenFlagged)
+            @Html.ValidationMessageFor(model => model.HasBeenFlagged)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+<script>
+	$(document).ready(function () {
+		$('#UserName').attr('readonly', 'readonly');
+		$('#QuestionWhy').attr('readonly', 'readonly');
+		$('#QuestionWhyYou').attr('readonly', 'readonly');
+		$('#QuestionCV').attr('readonly', 'readonly');
+	});
+</script>
+
+<style>
+#attention-message{
+	margin-top:-5px;
+}
+</style>

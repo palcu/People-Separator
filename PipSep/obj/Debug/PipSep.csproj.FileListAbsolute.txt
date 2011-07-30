@@ -1,0 +1,16 @@
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\PipSep.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\PipSep.pdb
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\EntityFramework.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\Facebook.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\Facebook.Web.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\Facebook.Web.Mvc.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\EntityFramework.xml
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\Facebook.xml
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\Facebook.Web.xml
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\Facebook.Web.Mvc.xml
+C:\Users\Alex\Desktop\PipSep\PipSep\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alex\Desktop\PipSep\PipSep\obj\Debug\PipSep.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\obj\Debug\PipSep.pdb
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\System.Data.SqlServerCe.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\Alex\Desktop\PipSep\PipSep\bin\WebActivator.dll

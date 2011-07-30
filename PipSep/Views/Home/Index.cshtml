@@ -1,0 +1,18 @@
+﻿@{
+	ViewBag.Title = "Tech.FriendCamp('2011')";
+}
+
+<section class="front-page">
+	@Html.Raw(ViewBag.Content)
+	@if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated){
+	<a href="@Url.Action("Register","Account")" class="call-to-action">
+		Apply now!
+	</a>
+ }
+ else if (ViewBag.CV == true)
+ {
+	 <a href="@Url.Action("EditCreate", "CV")" class="call-to-action">
+		Send CV!
+	</a>
+ }
+</section>
