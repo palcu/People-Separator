@@ -18,9 +18,21 @@ namespace PipSep.Controllers
 		// GET: /CV/
 		//[Authorize(Roles = "Administrator, Editor")]
 		public ViewResult Index()
-		{
-			return View(db.ApplicationCVs.ToList());
-		}
+        {
+            ViewBag.CVsSent = db.ApplicationCVs.Count();
+            ViewBag.CVsApproved = db.ApplicationCVs.Count(r => r.IsAccepted == true);
+            if (db.ApplicationCVs.Count() == db.ApplicationCVs.Count(r => r.HasBeenVerified == true)) 
+            {
+                ViewBag.CanFinish = true;
+            }
+            else
+            { 
+                ViewBag.CanFinish = false;
+            }
+
+            return View(db.ApplicationCVs.ToList());
+
+        }
 
 		//
 		// GET: /CV/Details/5
@@ -57,7 +69,7 @@ namespace PipSep.Controllers
 				db.ApplicationCVs.Add(applicationcv);
 				db.SaveChanges();
 				
-				return RedirectToAction("EditCreate");
+				return RedirectToAction("EditCreate", new {hasSent=true});
 			}
 
 			return View(applicationcv);
@@ -66,10 +78,13 @@ namespace PipSep.Controllers
 		//
 		// GET: /CV/Edit/5
 
-		public ActionResult Edit(int id, string message)
+		public ActionResult Edit(int id, bool message)
 		{
 			ApplicationCV applicationcv = db.ApplicationCVs.Find(id);
 			ViewBag.Gender = applicationcv.Gender;
+            if (message)
+                ViewBag.Message = "You have succesfully sent your CV.";
+               
 
 
 			if (this.User.Identity.Name == applicationcv.UserName)
@@ -142,14 +157,14 @@ namespace PipSep.Controllers
 		//
 		// GET: /CV/EditCreate
 		[Authorize]
-		public ActionResult EditCreate()
+		public ActionResult EditCreate(bool hasSent = false)
 		{
 			string UserName = HttpContext.User.Identity.Name;
 			ApplicationCV applicationcv = db.ApplicationCVs.SingleOrDefault(r => r.UserName == UserName);
 			if (applicationcv == null)
 				return RedirectToAction("Create", "CV");
 			else
-				return RedirectToAction("Edit", new { id = applicationcv.Id });
+				return RedirectToAction("Edit", new { id = applicationcv.Id, message=hasSent });
 		}
 
 		//
@@ -189,5 +204,32 @@ namespace PipSep.Controllers
 			ViewBag.Message = "There has been an error.";
 			return View(applicationcv);
 		}
+
+        //
+        // POST: /CV/Finish
+
+        public ActionResult Finish()
+        {
+            System.Web.Configuration.WebConfigurationManager.AppSettings.Set("AreRegistrationsAllowed","false");
+            List<string> users = db.ApplicationCVs.Where(r => r.IsAccepted == true).Select(r => r.UserName).ToList();
+            Page page = new Page();
+            page = Page.AddDateCreatedAndAuthor(page);
+            page.Content = "<p>And the participants are:</p><ul>";
+            foreach(var user in users){
+                page.Content += "<li>" + user + "</li>";
+            }
+            page.Content += "</ul>";
+            page.IsMenu = true;
+            page.IsBlog = false;
+            page.IsComment = false;
+            page.IsSticky = false;
+            
+            page.Title = "Participants";
+            db.Pages.Add(page);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
 	}
+
+
 }

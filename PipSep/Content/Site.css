@@ -267,7 +267,7 @@ page width. Or, you can specify an exact pixel width. */
     margin: 0 auto;
 }
 
-header, #header {
+#top-header {
     margin-bottom: 20px;
     color: #000;
     padding-left:30px;
@@ -277,7 +277,7 @@ header, #header {
     border-bottom-left-radius: 30px;
 }
 
-	header h1, #header h1 {
+	#top-header h1 {
 		font-weight: bold;
 		color: #000;
 		line-height: 2em;
@@ -336,6 +336,11 @@ header, #header {
 }
 	#main p{
 		margin: 0 0 5px 0;
+	}
+	
+	#main #header, #main header
+	{
+	    margin-bottom:20px;
 	}
 
 #sidebar{
@@ -416,13 +421,13 @@ ul#menu li.selected a
 }
 
 ul#submenu{
-	margin-top: 4px;
+	margin-top: 5px;
 }
 
 ul#submenu li a{
 	width: 133px; 
 	padding: 4px 14px; 
-	margin-left: 40px; 
+	margin-left: 41px; 
 	background-color: #42567A;
 }
 

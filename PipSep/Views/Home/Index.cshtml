@@ -4,15 +4,26 @@
 
 <section class="front-page">
 	@Html.Raw(ViewBag.Content)
-	@if (!System.Web.HttpContext.Current.User.Identity.IsAuthenticated){
+	@if (!HttpContext.Current.User.IsInRole("Administrator") && !System.Web.HttpContext.Current.User.Identity.IsAuthenticated && ViewBag.registrations)
+ {
 	<a href="@Url.Action("Register","Account")" class="call-to-action">
 		Apply now!
 	</a>
  }
- else if (ViewBag.CV == true)
+ else if (!HttpContext.Current.User.IsInRole("Administrator")  && ViewBag.CV == true && ViewBag.registrations)
  {
 	 <a href="@Url.Action("EditCreate", "CV")" class="call-to-action">
 		Send CV!
 	</a>
  }
 </section>
+
+<section>
+    @{Html.RenderAction("FrontNews", "Page");}
+</section>
+
+<style>
+	#news{
+		margin-top:50px;
+	}
+</style>

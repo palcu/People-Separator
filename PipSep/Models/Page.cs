@@ -37,7 +37,7 @@ namespace PipSep.Models
         [DisplayName("Appears in menu")]
         public bool IsMenu { get; set; }
 
-        [DisplayName("Appears on front page blog")]
+        [DisplayName("Appears on news")]
         public bool IsBlog { get; set; }
 
         [DisplayName("Page has comments available")]

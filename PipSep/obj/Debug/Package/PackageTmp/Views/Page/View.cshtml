@@ -1,0 +1,19 @@
+﻿@model PipSep.Models.Page
+
+@{
+    ViewBag.Title = Model.Title + " - TechFriendCamp 2011";
+}
+
+<article>
+	<header>
+		<h1>@Model.Title</h1>
+		<time datetime="@Model.DateCreated" pubdate="pubdate">@Model.DateCreated.ToUniversalTime()</time> - @Model.Author
+	</header>
+
+	@Html.Raw(Model.Content)
+
+	@if (Model.IsComment)
+	{
+		<p>Here should be comments inserted.</p>
+	}
+</article>

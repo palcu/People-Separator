@@ -14,6 +14,6 @@
 
 	@if (Model.IsComment)
 	{
-		<p>Here should be comments inserted.</p>
+		<fb:comments href="@Request.Url.ToString()" num_posts="2" width="500"></fb:comments>
 	}
 </article>

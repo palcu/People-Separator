@@ -12,7 +12,7 @@
 @if (ViewBag.DisplayConnect == true)
 {
 <p>
-	Connect first with your Facebook Account, to take advanteges of PeopleSeparator. <fb:login-button perms="user_about_me,user_activities,user_education_history,user_likes,user_status,user_hometown,user_interests" onlogin="window.location = '@Url.Action("Account", "FacebookLogOn")';">Facebook Connect</fb:login-button>
+	Connect first with your Facebook Account, to take advanteges of PeopleSeparator. <fb:login-button perms="user_about_me,user_activities,user_education_history,user_likes,user_status,user_hometown,user_interests" onlogin="window.location = '@Url.Action("LogOn", "Facebook")';">Facebook Connect</fb:login-button>
 </p>
 <p>
     Or use the form below to create a simple new account. 

@@ -5,7 +5,7 @@
 <h2>Settings</h2>
 
 
-<form method="post" action="/PeopleSeparator/">
+<form method="post" action="/PeopleSeparator/DisplayData">
 	<p>There are a total of @ViewBag.Total participants.</p>
 
 	<p>
@@ -18,13 +18,13 @@
 
 	<p>Add how many groups do you want:</p>
 	<ol id="groups">
-		<li><input type="text" class="group" value = "0" /></li>
+		<li><input type="text" class="group" value = "1" name="group0" /></li>
 	</ol>
 
 	
 
 	<p>
-		<a href="#" id="add-group">Add Group</a>
+		<a href="#" id="add-group">Add Group</a> <a href="#" id="remove-group">Remove Group</a>
 	</p>
 	<p id="p-remaining">
 		Add <span class="number">@ViewBag.Total</span>  persons to groups.
@@ -41,9 +41,7 @@
 	</p>
 </form>
 
-<p>
-	<i>It will take a while for the next page to fetch data about users.</i>
-</p>
+
 		
 <script>
 	totalPersons = @ViewBag.Total;

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "GetData";
+}
+
+<h2>Here is the data</h2>
+
+@Html.ActionLink("Go to next step", "DisplayMatrix")
+
+<ul>
+	@foreach (var person in ViewBag.data)
+ {
+	 <li>
+		<h3>@person.UserName</h3>
+		<h4>Friends</h4>
+		<ul>
+		@foreach (var item in person.Friends)
+  {
+			<li>@item</li>
+  }
+		</ul>
+		<h4>Pages</h4>
+		<ul>
+		@foreach (var item in person.Pages)
+	{
+			<li>@item</li>
+	}
+		</ul>
+	 </li>
+ }
+</ul>
+
+@Html.ActionLink("Go to next step", "DisplayMatrix")

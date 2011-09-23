@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<PipSep.Models.ApplicationCV>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Applications Editor";
 }
 
-<h2>Index</h2>
+<h2>Applications Editor</h2>
 
 <table>
     <tr>
@@ -21,7 +21,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr class=" @if (item.HasBeenVerified) { @:input-validation-ok
+    <tr class=" @if (item.HasBeenVerified && !item.HasBeenFlagged) { @:input-validation-ok
 				}
 				@if (item.HasBeenFlagged) { @:input-validation-flag
 				} ">
@@ -48,11 +48,24 @@
 	<li><span class="input-validation-ok">Has been verified</span></li>
 </ul>
 
+<p>There are @ViewBag.CVsSent CVs sent and @ViewBag.CVsApproved CVs approved.</p>
+@if (ViewBag.CanFinish)
+{
+<p>@Html.ActionLink("Close registrations and publish page with participants.","Finish")</p>
+}
+
 <style type="text/css">
 h3{
 	margin-top:30px;
 }
 table{
 	text-align: center;
+}
+.input-validation-flag{
+background-color: #FF8989;
+    }
+.input-validation-ok{
+background-color:#CDFF68;
+    }
 }
 </style>

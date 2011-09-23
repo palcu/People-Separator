@@ -26,9 +26,6 @@
         <th>
             Author
         </th>
-        <th>
-            Sticky
-        </th>
         <th></th>
     </tr>
 
@@ -48,9 +45,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Author)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsSticky)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

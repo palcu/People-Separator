@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="page">
-        <header>
+        <header id="top-header">
             <div id="title">
                 <h1>
 					<a href="@Url.Action("Index", "Home")" class="no-url-style">
@@ -33,7 +33,7 @@
 			</section>
 			<aside id="sidebar"><ul>
 				<li>
-					@{Html.RenderPartial("_Nav");}
+					@{Html.RenderAction("GetNav", "Home");}
 				</li>
 					<li><div id="twitter">
 						<script src="http://widgets.twimg.com/j/2/widget.js"></script>
@@ -77,7 +77,7 @@
 				</ul></aside>
 			</div>
         <footer>
-			<p>Copyright &copy 2011 - An <a href="http://palcu.blogspot.com/">Alexandru Palcuie</a> production. All rights reserved.</p>
+			<p>Copyright &copy 2011 - An <a href="http://palcu.blogspot.com/">Alexandru Palcuie</a> production. All rights reserved. <a  href="https://github.com/palcuiealex/People-Separator/">Source code</a></p>
         </footer>
     </div>
 	@{Html.RenderPartial("FacebookInit");}

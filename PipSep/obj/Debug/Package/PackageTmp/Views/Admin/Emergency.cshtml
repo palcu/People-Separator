@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Emergency";
+}
+
+<h2>Emergency</h2>
+
+@using (Html.BeginForm()) {
+    <fieldset>
+        <legend>ApplicationCV</legend>
+
+        <div class="editor-label">
+            @Html.Label("Emergency text visible")
+        </div>
+        <div class="editor-field">
+            @Html.CheckBox("IsEmergency", (bool)ViewBag.IsEmergency)
+        </div>
+
+		<div class="editor-label">
+            @Html.Label("Emergency text")
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("EmergencyText", (string)ViewBag.EmergencyText)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}

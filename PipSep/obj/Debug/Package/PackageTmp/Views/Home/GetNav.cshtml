@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PipSep.Models.Page>
+
+<nav>
+	<ul id="menu">
+		<li>@Html.ActionLink("Home", "Index", "Home")</li>
+		<li>@Html.ActionLink("Application","EditCreate","CV")</li>
+		@*<li>@Html.ActionLink("Profile", "Profile", "Home")</li>*@
+		<li>@Html.ActionLink("News", "News", "Page")</li>
+		@foreach (var page in Model)
+  {
+		<li>@Html.ActionLink(page.Title, "View", "Page", new { id = page.Id }, null)</li>
+  }
+		@if (HttpContext.Current.User.IsInRole("Editor"))
+  {
+		<li>@Html.ActionLink("CV Editor", "Index", "CV")</li>
+  }
+		@if (HttpContext.Current.User.IsInRole("Administrator"))
+		{
+			<li>
+				@Html.ActionLink("Admin", "Index", "Admin")
+				<ul id="submenu">
+					<li>@Html.ActionLink("Pages", "Index", "Page")</li>
+					<li>@Html.ActionLink("Emergency", "Emergency", "Admin")</li>
+					<li>@Html.ActionLink("Index Content", "IndexContent", "Admin")</li>
+					<li>@Html.ActionLink("People Separator", "Index", "PeopleSeparator")</li>
+				</ul>
+			</li>
+		}
+	</ul>
+</nav>

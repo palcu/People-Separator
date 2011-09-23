@@ -14,3 +14,19 @@ C:\Users\Alex\Desktop\PipSep\PipSep\obj\Debug\PipSep.pdb
 C:\Users\Alex\Desktop\PipSep\PipSep\bin\System.Data.SqlServerCe.dll
 C:\Users\Alex\Desktop\PipSep\PipSep\bin\System.Data.SqlServerCe.Entity.dll
 C:\Users\Alex\Desktop\PipSep\PipSep\bin\WebActivator.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\PipSep.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\PipSep.pdb
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\EntityFramework.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\Facebook.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\Facebook.Web.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\Facebook.Web.Mvc.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\System.Data.SqlServerCe.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\System.Data.SqlServerCe.Entity.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\WebActivator.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\EntityFramework.xml
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\Facebook.xml
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\Facebook.Web.xml
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\bin\Facebook.Web.Mvc.xml
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\obj\Debug\PipSep.dll
+C:\Documents and Settings\Alex\Desktop\Sources\PipSep\PipSep\PipSep\obj\Debug\PipSep.pdb

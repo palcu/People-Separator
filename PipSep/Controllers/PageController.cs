@@ -119,5 +119,22 @@ namespace PipSep.Controllers
 			Page page = db.Pages.Find(id);
 			return View(page);
 		}
+
+		//
+		// GET: /Page/News
+		public ActionResult News()
+		{
+			var posts = db.Pages.Where(r => r.IsBlog == true).OrderByDescending(r => r.DateCreated).ToList();
+			return View(posts);
+		}
+
+		//
+		// GET: /Page/FrontNews
+		[ChildActionOnly]
+		public ActionResult FrontNews()
+		{
+			var posts = db.Pages.Where(r => r.IsBlog == true).OrderByDescending(r => r.DateCreated).Take(3).ToList();
+			return PartialView(posts);
+		}
     }
 }

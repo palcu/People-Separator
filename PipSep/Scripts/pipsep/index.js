@@ -1,6 +1,7 @@
 ﻿var nGroups = 1;
 
 $(document).ready(function () {
+    itChanged();
 	$(".group").change(function () {
 		itChanged();
 	});
@@ -25,6 +26,7 @@ function itChanged() {
 		console.log(total);
 		if (total > totalPersons) {
 			$('#p-toomuch').show();
+            $('input[type="submit"]').attr("disabled", true);
 			$('#p-remaining').hide();
 			$('#p-good').hide();
 			$('.number').html(total - totalPersons);
@@ -32,6 +34,7 @@ function itChanged() {
 		else if (total < totalPersons) {
 			$('#p-toomuch').hide();
 			$('#p-remaining').show();
+            $('input[type="submit"]').attr("disabled", true);
 			$('#p-good').hide();
 			$('.number').html(totalPersons - total);
 		}
@@ -42,17 +45,24 @@ function itChanged() {
 			$('input[type="submit"]').removeAttr('disabled');
 		}
 	}
-	else {
-		
-	}
-
 }
 
 //little problem... but works
 $('#add-group').click(function () {
+	$('#groups').append('<li><input type="text" class="group" value = "1" name="group' + nGroups + '" /></li>');
 	++nGroups;
-	$('#groups').append('<li><input type="text" class="group" value = "1" /></li>');
+    itChanged();
 	$(".group").die('change');
+	$(".group").change(function () {
+		itChanged();
+	});
+});
+
+$('#remove-group').click(function(){
+    $('#groups li:last').remove();
+    itChanged();
+    --nGroups;
+    $(".group").die('change');
 	$(".group").change(function () {
 		itChanged();
 	});
