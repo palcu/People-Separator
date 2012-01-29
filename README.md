@@ -14,6 +14,7 @@ For a demo, I built a website for a fictious conference, **TechFriendCamp.2011**
 ### Under the hood
 * ASP.NET MVC 3
 * jQuery
+* Facebook C# SDK
 * custom CSS theme
 * used Windows Azure cloud technology for scaling
 
