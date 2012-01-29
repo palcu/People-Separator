@@ -17,10 +17,10 @@ For a demo, I built a website for a fictious conference, **TechFriendCamp.2011**
 * ASP.NET MVC 3
 * jQuery
 * Facebook C# SDK
-* custom CSS theme
+* custom HTML5 theme
 * used Windows Azure cloud technology for scaling
 
-### Contests I have participated:
+### Contests where I have participated with this project
 * [Infoeducatie 2011](http://infoeducatie.ro/participanti.php?what=1249)
 * [GrepIT 2011](http://www.grepit.info/proiecte/people-separator/)
 
