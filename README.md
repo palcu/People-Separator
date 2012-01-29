@@ -11,6 +11,8 @@ The admin can use the following options for the groups:
 
 For a demo, I built a website for a fictious conference, **TechFriendCamp.2011**
 
+![screenshot](https://github.com/palcu/People-Separator/raw/master/screenshots/s1.png)
+
 ### Under the hood
 * ASP.NET MVC 3
 * jQuery
@@ -21,6 +23,8 @@ For a demo, I built a website for a fictious conference, **TechFriendCamp.2011**
 ### Contests I have participated:
 * [Infoeducatie 2011](http://infoeducatie.ro/participanti.php?what=1249)
 * [GrepIT 2011](http://www.grepit.info/proiecte/people-separator/)
+
+You can also watch the commercial made at GrepIT on [Youtube](http://www.youtube.com/watch?v=SFQSUAIHYQI)
 
 ### License
 
@@ -43,3 +47,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+![screenshot2](https://github.com/palcu/People-Separator/raw/master/screenshots/s2.png)
+![screenshot3](https://github.com/palcu/People-Separator/raw/master/screenshots/s3.png)
