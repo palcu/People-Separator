@@ -1,11 +1,13 @@
 # People Separator
 When organising a conference or a camp, everytime there is the problem of splitting people in:
+
 * rooms
 * groups for a workshop
 
 This is where my app comes in handy. People connect with there Facebook profile, I get their friends and likes, and using a greedy algorithm I split them _(I didn't know about unsupervised learning algorithms back then)_.
 
 The admin can use the following options for the groups:
+
 * the number of people and the number of groups
 * the percent of gender in each group (it is more homogenous to have 50% women and 50% men in a group, but in a room it is a **must** to have 100% of the same gender)
 
